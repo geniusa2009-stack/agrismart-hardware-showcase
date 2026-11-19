@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#071D19" />
+  <meta name="description" content="Explore AgriSmart's digital platform, application interface, and interactive 3D hardware showcase from one presentation page." />
+  <title>AgriSmart | Judges' Experience Portal</title>
+  <style>
+    :root{--ink:#0b2922;--forest:#071d19;--forest2:#102b24;--green:#43e3a1;--green-dark:#137d58;--paper:#f5f8f4;--muted:#65776f;--line:#dce6dd;--radius:22px}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Tahoma,sans-serif;line-height:1.55;overflow-x:hidden}
+    button,a{font:inherit}
+    a{text-decoration:none;color:inherit}
+    button{cursor:pointer}
+    ::selection{background:#b8f6d7;color:#08382a}
+    .wrap{width:min(1160px,calc(100% - 52px));margin-inline:auto}
+    .dark-zone{position:relative;isolation:isolate;color:white;background:radial-gradient(ellipse 65% 65% at 88% 38%,#1c5340 0%,transparent 72%),radial-gradient(ellipse 50% 50% at -10% 90%,#164238 0%,transparent 80%),var(--forest);overflow:hidden}
+    .dark-zone::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;pointer-events:none;background-image:linear-gradient(#8bc4a312 1px,transparent 1px),linear-gradient(90deg,#8bc4a312 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,transparent 10%,#000 100%)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 0;border-bottom:1px solid #ffffff1e}
+    .brand{display:inline-flex;align-items:center;gap:13px;font-size:22px;font-weight:780;letter-spacing:-.9px}
+    .brand-mark{width:40px;height:40px;border:1px solid #6ef0af66;background:#1d5f44b3;border-radius:12px;display:grid;place-items:center}
+    .brand-mark svg{width:24px;height:24px}
+    .nav-end{display:flex;align-items:center;gap:20px}
+    .nav-link{font-size:13px;font-weight:600;color:#d2e7dc;transition:color .2s}
+    .nav-link:hover{color:#76f7bb}
+    .lang{font-size:12px;font-weight:800;color:#e8fff2;border:1px solid #ffffff38;background:#ffffff0c;padding:9px 13px;border-radius:99px;min-width:64px}
+    .lang:hover,.lang:focus-visible{background:#ffffff23}
+    .hero{display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:40px;min-height:550px;padding:67px 0 88px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;letter-spacing:2.35px;text-transform:uppercase;font-size:10.5px;font-weight:800;color:#83f5b9;margin-bottom:26px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:currentColor}
+    .hero h1{margin:0;max-width:650px;font-size:clamp(43px,5.1vw,76px);line-height:1.085;letter-spacing:-3.6px;font-weight:800}
+    .hero h1 .mint{color:#86f2b7}
+    .hero p{margin:28px 0 34px;color:#b7ccc1;font-size:16px;line-height:1.85;max-width:515px}
+    .actions{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:13px 19px;border-radius:12px;font-size:13px;font-weight:750;transition:transform .16s,background .16s,border-color .16s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{color:#073326;background:#83efb4;border:1px solid #83efb4}
+    .btn-primary:hover{background:#acffd0}
+    .btn-quiet{color:#effff4;border:1px solid #ffffff35;background:#ffffff0c}
+    .btn-quiet:hover{background:#ffffff1b}
+    .btn svg{width:17px;height:17px}
+    .hero-graphic{min-width:0;position:relative;padding:20px 0 7px}
+    .orbital{position:relative;aspect-ratio:1.09;max-width:490px;margin-inline:auto;border-radius:35px;border:1px solid #a5dabb25;background:linear-gradient(145deg,#154c38a3,#09281c5c);box-shadow:inset 0 1px #b5ffca23,0 24px 80px #0003;display:grid;place-items:center;overflow:hidden}
+    .orbital:before{content:"";position:absolute;width:78%;aspect-ratio:1;border:1px solid #75d4a228;border-radius:50%;box-shadow:0 0 0 52px #2bf29d08,0 0 0 106px #2bf29d06}
+    .orbital svg{width:90%;height:90%;position:relative;z-index:1;overflow:visible}
+    .floating-pill{position:absolute;bottom:6%;left:5%;background:#f7fff9;color:#174635;padding:10px 13px;border-radius:9px;box-shadow:0 8px 25px #031f1a70;z-index:3;display:flex;align-items:center;gap:8px;font-weight:800;letter-spacing:1px;font-size:10px}
+    .pill-dot{background:#28ba76;width:8px;height:8px;border-radius:50%}
+    .intro{padding:67px 0 24px;display:flex;justify-content:space-between;gap:20px;align-items:end}
+    .section-overline{color:#167f57;letter-spacing:2px;font-size:11px;font-weight:850;text-transform:uppercase}
+    .intro h2{margin:11px 0 9px;font-size:clamp(32px,3.25vw,46px);font-weight:820;line-height:1.15;letter-spacing:-1.5px}
+    .intro p{font-size:14px;color:var(--muted);margin:0;max-width:570px}
+    .section-count{color:#70877c;white-space:nowrap;font-size:11px;letter-spacing:1.8px;font-weight:800;padding-bottom:8px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;padding-bottom:56px}
+    .card{display:flex;flex-direction:column;min-width:0;border:1px solid #dbe6de;border-radius:21px;background:white;box-shadow:0 10px 28px #0d312008;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .card:hover{transform:translateY(-6px);border-color:#a9d2b6;box-shadow:0 16px 37px #092d1920}
+    .card-art{height:188px;overflow:hidden;position:relative;border-bottom:1px solid #e7eee8;display:grid;place-items:center}
+    .art-platform{background:radial-gradient(circle at 83% 18%,#80eab040,transparent 40%),linear-gradient(135deg,#e7f7eb,#d5eadd)}
+    .art-app{background:radial-gradient(circle at 15% 0%,#8bb0ff2e,transparent 48%),linear-gradient(135deg,#edf5f3,#dbe8eb)}
+    .art-hardware{background:radial-gradient(circle at 75% 70%,#2b9e7a30,transparent 50%),linear-gradient(135deg,#153a34,#061d1b)}
+    .art-label{position:absolute;top:17px;left:18px;font-size:10px;letter-spacing:1.35px;font-weight:800;color:#23533c;background:#ffffffb0;border:1px solid #ffffffaf;border-radius:6px;padding:5px 9px}
+    .art-hardware .art-label{color:#9bf5c2;background:#e3ffed10;border-color:#a9dfbc30}
+    .card-art svg{height:156px;width:94%;display:block}
+    .card-content{padding:25px 25px 22px;display:flex;flex-direction:column;flex:1}
+    .card-number{font-size:10px;font-weight:850;letter-spacing:2px;color:#16845b;margin-bottom:13px}
+    .card h3{margin:0;font-size:23px;line-height:1.2;letter-spacing:-.7px}
+    .card p{margin:12px 0 23px;color:#66796e;font-size:13px;line-height:1.72;min-height:68px}
+    .card-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:18px;border-top:1px solid #e5ece6}
+    .card-open{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:800;color:#0d684a;white-space:nowrap}
+    .card-open:hover{color:#14a06c}
+    .card-open svg{width:17px;height:17px}
+    .card-copy{border:1px solid #dbe8de;background:#f7faf7;border-radius:9px;width:36px;height:36px;display:grid;place-items:center;color:#396b52;transition:background .16s}
+    .card-copy:hover{background:#dff6e8}
+    .card-copy svg{width:16px;height:16px}
+    .bottom-panel{display:flex;gap:28px;justify-content:space-between;align-items:center;padding:30px 34px;margin-bottom:70px;border:1px solid #bddac6;border-radius:19px;background:linear-gradient(115deg,#e4f5e8,#f7fcf6)}
+    .repo-icon{width:49px;height:49px;border:1px solid #b6d9bd;border-radius:12px;display:grid;place-items:center;background:white;flex:none}
+    .repo-icon svg{width:24px;height:24px}
+    .repo-description{display:flex;gap:16px;align-items:center}
+    .bottom-panel h3{margin:0 0 3px;font-size:17px;letter-spacing:-.25px}
+    .bottom-panel p{margin:0;color:#64776b;font-size:12.5px}
+    .repo-link{border-radius:11px;background:var(--ink);color:white;padding:12px 17px;font-size:12px;font-weight:750;white-space:nowrap;display:flex;align-items:center;gap:8px;transition:background .18s}
+    .repo-link:hover{background:#226445}
+    .repo-link svg{width:15px;height:15px}
+    footer{border-top:1px solid #dce6dd;padding:23px 0 33px}
+    .footer-inner{display:flex;gap:15px;justify-content:space-between;align-items:center;color:#728279;font-size:11px}
+    .footer-brand{font-weight:830;letter-spacing:.3px;color:#214835}
+    #toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#0a2b20;color:white;box-shadow:0 12px 40px #0003;border-radius:10px;padding:12px 20px;font-size:12px;font-weight:750;transition:all .2s;z-index:20}
+    #toast.show{opacity:1;transform:translate(-50%,0)}
+    :focus-visible{outline:3px solid #43d795;outline-offset:3px}
+    html[dir="rtl"] .hero h1{letter-spacing:-1.8px}
+    html[dir="rtl"] .intro h2{letter-spacing:-.6px}
+    html[dir="rtl"] .art-label{left:auto;right:18px}
+    html[dir="rtl"] .card-art svg{transform:scaleX(-1)}
+    html[dir="rtl"] .orbital svg{transform:scaleX(-1)}
+    @media(max-width:1020px){.hero{gap:22px}.hero h1{font-size:clamp(39px,5.5vw,60px);letter-spacing:-2px}.card-content{padding:23px 19px}.card h3{font-size:21px}}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding:60px 0}.hero p{max-width:660px}.hero-graphic{max-width:530px;width:100%;margin:0 auto}.orbital{aspect-ratio:1.4}.orbital svg{height:100%;width:80%}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{padding-top:50px}}
+    @media(max-width:580px){.wrap{width:min(100% - 32px,1160px)}.nav{padding:19px 0}.brand{font-size:19px}.brand-mark{width:36px;height:36px}.nav-link{display:none}.hero{padding:47px 0 60px}.hero h1{font-size:clamp(36px,9.5vw,53px);line-height:1.1;letter-spacing:-1.9px}.hero p{font-size:14px;margin:24px 0 27px}.orbital{aspect-ratio:1.2}.orbital svg{width:90%}.intro{display:block}.intro h2{font-size:35px}.section-count{margin-top:18px}.cards{grid-template-columns:1fr;gap:17px}.card-art{height:170px}.card p{min-height:0}.bottom-panel{flex-direction:column;align-items:stretch;padding:22px;gap:22px;margin-bottom:48px}.repo-link{justify-content:center}.footer-inner{flex-wrap:wrap}.hero-graphic{padding:0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    @media print{.dark-zone{print-color-adjust:exact;-webkit-print-color-adjust:exact}.card-art{print-color-adjust:exact;-webkit-print-color-adjust:exact}.lang,.card-copy{display:none}.hero{min-height:auto;padding:34px 0}.orbital{max-width:300px}.cards{gap:10px}.card-content{padding:12px}.bottom-panel{margin-bottom:20px}a{color:inherit}}
+  </style>
+</head>
+<body>
+  <div class="dark-zone">
+    <header class="nav wrap">
+      <a class="brand" href="#top" aria-label="AgriSmart home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12.2 20V9.2M12.2 13.7C7.2 13.7 5 10.2 5 5.2c4.8-.1 8 2.1 8 7.5M12.1 17.3c5.1.1 7.5-2.8 7.6-8.1-5.1-.1-8.1 2.9-8.1 8" stroke="#8bf4b8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        AgriSmart
+      </a>
+      <div class="nav-end">
+        <a class="nav-link" href="#experiences" data-t="navExplore">Explore demos</a>
+        <a class="nav-link" href="#source" data-t="navSource">Source code</a>
+        <button class="lang" id="langToggle" type="button" aria-label="Switch language">العربية</button>
+      </div>
+    </header>
+    <main id="top" class="hero wrap">
+      <div>
+        <div class="eyebrow" data-t="eyebrow">JUDGES' EXPERIENCE PORTAL</div>
+        <h1><span data-t="heroA">Explore a</span> <span class="mint" data-t="heroB">connected</span><br/><span data-t="heroC">farming future.</span></h1>
+        <p data-t="heroText">One place to explore AgriSmart's platform, application interface, and interactive 3D hardware showcase. Select any experience below to open its dedicated live demo.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#experiences"><span data-t="ctaExplore">Explore the project</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="btn btn-quiet" href="https://geniusa2009-stack.github.io/agrismart-hardware-showcase/" target="_blank" rel="noopener noreferrer"><span data-t="ctaHardware">View 3D hardware</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-graphic" aria-label="Illustration of the AgriSmart connected sensing, control and connectivity system">
+        <div class="orbital">
+          <svg viewBox="0 0 450 425" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="graphic-title">
+            <title id="graphic-title">Connected sensing, control and connectivity architecture illustration</title>
+            <defs>
+              <linearGradient id="centerGlow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b3ffd5"/><stop offset="1" stop-color="#4fde99"/></linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="7"/></filter>
+            </defs>
+            <g stroke="#66c894" stroke-opacity=".35" fill="none"><circle cx="225" cy="207" r="121" stroke-dasharray="3 8"/><circle cx="225" cy="207" r="159" stroke-opacity=".15"/><path d="M225 207 109 120M225 207l117-86M225 207 227 333" stroke-width="2" stroke-dasharray="5 6"/></g>
+            <circle cx="225" cy="207" r="75" fill="#31a56d" opacity=".16" filter="url(#glow)"/>
+            <circle cx="225" cy="207" r="71" fill="#143b2c" stroke="#83e5a9" stroke-opacity=".56"/>
+            <circle cx="225" cy="207" r="58" fill="#164a34" stroke="#96e5b1" stroke-opacity=".22"/>
+            <g stroke="url(#centerGlow)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M225 244v-55M225 216c-27 0-37-16-38-37 23-3 39 10 39 29M225 224c25 0 37-14 38-37-23-2-38 9-38 30"/></g>
+            <g>
+              <rect x="38" y="65" width="140" height="78" rx="13" fill="#0c2922" stroke="#76cfa18a"/>
+              <circle cx="62" cy="91" r="12" fill="#3d8d63" fill-opacity=".35" stroke="#8de6a8" stroke-opacity=".6"/>
+              <path d="M57 93c3-7 8-9 11-4M62 84v14" stroke="#9cf2b6" stroke-width="1.7" fill="none"/>
+              <text x="84" y="94" font-size="12" fill="#fff" font-weight="750">SENSE</text>
+              <text x="55" y="123" font-size="10" fill="#b4d8bf">Soil monitoring</text>
+            </g>
+            <g>
+              <rect x="280" y="69" width="138" height="77" rx="13" fill="#0c2922" stroke="#76cfa18a"/>
+              <circle cx="305" cy="95" r="12" fill="#3d8d63" fill-opacity=".35" stroke="#8de6a8" stroke-opacity=".6"/>
+              <path d="M299 94h12m-6-6v12" stroke="#9cf2b6" stroke-width="1.7"/>
+              <text x="327" y="98" font-size="12" fill="#fff" font-weight="750">CONNECT</text>
+              <text x="297" y="124" font-size="10" fill="#b4d8bf">Connectivity</text>
+            </g>
+            <g>
+              <rect x="149" y="298" width="155" height="76" rx="13" fill="#0c2922" stroke="#76cfa18a"/>
+              <circle cx="174" cy="324" r="12" fill="#3d8d63" fill-opacity=".35" stroke="#8de6a8" stroke-opacity=".6"/>
+              <path d="M168 325h12m-6-7v13" stroke="#9cf2b6" stroke-width="1.7"/>
+              <text x="195" y="328" font-size="12" fill="#fff" font-weight="750">CONTROL</text>
+              <text x="166" y="352" font-size="10" fill="#b4d8bf">Irrigation control</text>
+            </g>
+            <g fill="#87eab3"><circle cx="157" cy="157" r="3.5"/><circle cx="288" cy="158" r="3.5"/><circle cx="226" cy="288" r="3.5"/></g>
+          </svg>
+          <div class="floating-pill"><span class="pill-dot"></span> AGRISMART ECOSYSTEM</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <section class="wrap" id="experiences">
+    <div class="intro">
+      <div><div class="section-overline" data-t="sectionOverline">THE PROJECT, IN THREE EXPERIENCES</div><h2 data-t="sectionTitle">Choose what you'd like to explore.</h2><p data-t="sectionText">Each card opens a separate AgriSmart experience in a new browser tab.</p></div>
+      <div class="section-count">01 — 03 / AGRISMART</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-art art-platform">
+          <span class="art-label">WEB PLATFORM</span>
+          <svg viewBox="0 0 330 165" role="img" aria-label="Illustration of connected agriculture platform">
+            <defs><linearGradient id="field" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#86c69e"/><stop offset="1" stop-color="#338864"/></linearGradient></defs>
+            <path d="m22 111 142-80 142 80-142 53Z" fill="#9ac9a8" opacity=".43"/>
+            <path d="m35 116 129-71 129 71-129 43Z" fill="#fff" fill-opacity=".63"/>
+            <path d="m56 119 108-59 108 59-108 31Z" fill="#cce9c5"/>
+            <g stroke="#3d996b" stroke-width="2.4" stroke-linecap="round" opacity=".8"><path d="m67 126 107-59M88 133l107-59m-85 65 107-59m-87 64 107-59m-90 63 107-59"/><path d="m94 105 71 31m-55-40 72 31m-55-40 73 30m-55-40 72 30" stroke="#75b982" stroke-width="1.3"/></g>
+            <g stroke="#1e795a" stroke-width="2" fill="white"><path d="M165 94V34" stroke-dasharray="4 5"/><circle cx="165" cy="30" r="10" fill="#e9fff1"/><path d="M165 101 217 64" stroke-dasharray="4 5"/><circle cx="221" cy="62" r="7"/><path d="M165 101 102 63" stroke-dasharray="4 5"/><circle cx="100" cy="62" r="7"/></g>
+            <rect x="129" y="84" width="71" height="38" rx="8" fill="#124f39" stroke="#89d9a0"/>
+            <path d="M139 108h12l8-13 8 10 7-6 14 7" stroke="#a4f1b6" stroke-width="2.3" fill="none"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <div class="card-number">EXPERIENCE 01 / REPLIT</div>
+          <h3 data-t="platformTitle">AgriSmart Platform</h3>
+          <p data-t="platformText">Explore the web platform and its project experience, hosted on Replit.</p>
+          <div class="card-bottom">
+            <a class="card-open" href="https://agri-smart-platform-1.replit.app/" target="_blank" rel="noopener noreferrer"><span data-t="openDemo">Open experience</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <button class="card-copy" data-copy="https://agri-smart-platform-1.replit.app/" type="button" aria-label="Copy platform link" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-art art-app">
+          <span class="art-label">APPLICATION</span>
+          <svg viewBox="0 0 330 165" role="img" aria-label="Illustration of AgriSmart web application dashboard">
+            <rect x="47" y="14" width="236" height="146" rx="12" fill="#0e3830" opacity=".14"/>
+            <rect x="41" y="8" width="240" height="146" rx="11" fill="#fff" stroke="#a8c3bb" stroke-width="1.3"/>
+            <path d="M52 8h218a11 11 0 0 1 11 11v18H41V19A11 11 0 0 1 52 8Z" fill="#163e37"/>
+            <circle cx="57" cy="23" r="3" fill="#6bd6a3"/><circle cx="68" cy="23" r="3" fill="#6bd6a377"/><circle cx="79" cy="23" r="3" fill="#6bd6a355"/>
+            <rect x="56" y="48" width="48" height="90" rx="5" fill="#f1f6f3"/>
+            <rect x="64" y="59" width="30" height="5" rx="2.5" fill="#77a998"/>
+            <rect x="64" y="75" width="22" height="4" rx="2" fill="#b5cfc2"/>
+            <rect x="64" y="90" width="29" height="4" rx="2" fill="#b5cfc2"/>
+            <rect x="64" y="105" width="24" height="4" rx="2" fill="#b5cfc2"/>
+            <rect x="117" y="48" width="148" height="31" rx="5" fill="#e2f2e7"/>
+            <path d="M128 68h23l9-11 9 7 10-10 12 11 12-4 12 6" stroke="#329569" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+            <rect x="117" y="87" width="68" height="51" rx="5" fill="#f1f6f3"/>
+            <rect x="194" y="87" width="71" height="51" rx="5" fill="#f1f6f3"/>
+            <path d="M126 125h51m-50-7h50m-50-7h50" stroke="#d5e5db"/>
+            <path d="M131 121v-10m10 10v-20m10 20v-15m10 15v-25m10 25v-12" stroke="#2caa77" stroke-width="5"/>
+            <circle cx="230" cy="112" r="17" fill="none" stroke="#d1e4d9" stroke-width="7"/>
+            <path d="M230 95a17 17 0 1 1-16 22" fill="none" stroke="#38a86b" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <div class="card-number">EXPERIENCE 02 / VERCEL</div>
+          <h3 data-t="appTitle">AgriSmart App</h3>
+          <p data-t="appText">Open the application interface to see the software side of AgriSmart.</p>
+          <div class="card-bottom">
+            <a class="card-open" href="https://agri-smart-cloud-work.vercel.app/simple" target="_blank" rel="noopener noreferrer"><span data-t="openDemo">Open experience</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <button class="card-copy" data-copy="https://agri-smart-cloud-work.vercel.app/simple" type="button" aria-label="Copy application link" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-art art-hardware">
+          <span class="art-label">INTERACTIVE 3D</span>
+          <svg viewBox="0 0 330 165" role="img" aria-label="Illustration of 3D smart irrigation hardware">
+            <defs><linearGradient id="caseg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#bce4d0"/><stop offset="1" stop-color="#527d73"/></linearGradient></defs>
+            <path d="m170 8 78 45-79 44-78-44Z" fill="#acd0c4" opacity=".14" stroke="#73cca4" stroke-dasharray="4 5"/>
+            <path d="m93 76 73-43 71 43-72 41Z" fill="#d9ede4" stroke="#82a99a" stroke-width="1.5"/>
+            <path d="m93 76 72 41v29l-72-41Z" fill="#92b5aa" stroke="#668f80" stroke-width="1.5"/>
+            <path d="m165 117 72-41v29l-72 41Z" fill="url(#caseg)" stroke="#668f80" stroke-width="1.5"/>
+            <path d="m104 76 61-35 61 35-61 35Z" fill="#f2faf4" stroke="#75998b"/>
+            <path d="m121 77 43-25 45 25-44 25Z" fill="#d3e8df"/>
+            <path d="m128 77 37-22 37 22-37 21Z" fill="none" stroke="#8aafa0" stroke-width="1.4"/>
+            <path d="M165 55v43M128 77h74" stroke="#93b4a3" stroke-opacity=".3"/>
+            <circle cx="219" cy="94" r="3" fill="#338e5e"/>
+            <path d="m165 146 0 16" stroke="#9cf4bf" stroke-width="4" stroke-linecap="round"/>
+            <path d="M165 162c-15-4-24-1-35 0" stroke="#5cb78d" stroke-width="2" fill="none"/>
+            <path d="M81 41 59 28m22 13-25 10m197 84 24 12m-24-12 24-10" stroke="#7ad8aa" stroke-opacity=".6" stroke-width="1.5"/>
+            <circle cx="81" cy="41" r="3" fill="#89eab9"/><circle cx="253" cy="135" r="3" fill="#89eab9"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <div class="card-number">EXPERIENCE 03 / GITHUB PAGES</div>
+          <h3 data-t="hardwareTitle">3D Hardware Showcase</h3>
+          <p data-t="hardwareText">Rotate, inspect and explore the visualized AgriSmart hardware in an interactive 3D viewer.</p>
+          <div class="card-bottom">
+            <a class="card-open" href="https://geniusa2009-stack.github.io/agrismart-hardware-showcase/" target="_blank" rel="noopener noreferrer"><span data-t="openDemo">Open experience</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <button class="card-copy" data-copy="https://geniusa2009-stack.github.io/agrismart-hardware-showcase/" type="button" aria-label="Copy hardware link" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="source">
+    <div class="bottom-panel">
+      <div class="repo-description">
+        <div class="repo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#155c42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2M15 22v-3.5a3.4 3.4 0 0 0-.9-2.6c3.2-.3 6.6-1.6 6.6-7A5.5 5.5 0 0 0 19.2 5a5 5 0 0 0-.1-3s-1.3-.4-4 1.5a14 14 0 0 0-6.2 0C6.2 1.6 4.9 2 4.9 2a5 5 0 0 0-.1 3A5.5 5.5 0 0 0 3.3 8.9c0 5.4 3.4 6.7 6.6 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg></div>
+        <div><h3 data-t="repoTitle">Want to inspect the hardware source?</h3><p data-t="repoText">Explore the public repository for the AgriSmart 3D hardware showcase.</p></div>
+      </div>
+      <a class="repo-link" href="https://github.com/geniusa2009-stack/agrismart-hardware-showcase" target="_blank" rel="noopener noreferrer"><span data-t="repoCTA">View on GitHub</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+  </section>
+
+  <footer><div class="wrap footer-inner"><div><span class="footer-brand">AGRISMART</span> · <span data-t="footer">Project demonstrations & interactive showcase</span></div><div data-t="footnote">Open the external links to view each live experience.</div></div></footer>
+  <div id="toast" role="status" aria-live="polite">Link copied</div>
+  <script>
+    (()=>{
+      const translations={
+        en:{navExplore:'Explore demos',navSource:'Source code',eyebrow:"JUDGES' EXPERIENCE PORTAL",heroA:'Explore a',heroB:'connected',heroC:'farming future.',heroText:"One place to explore AgriSmart's platform, application interface, and interactive 3D hardware showcase. Select any experience below to open its dedicated live demo.",ctaExplore:'Explore the project',ctaHardware:'View 3D hardware',sectionOverline:'THE PROJECT, IN THREE EXPERIENCES',sectionTitle:"Choose what you'd like to explore.",sectionText:'Each card opens a separate AgriSmart experience in a new browser tab.',platformTitle:'AgriSmart Platform',platformText:'Explore the web platform and its project experience, hosted on Replit.',appTitle:'AgriSmart App',appText:'Open the application interface to see the software side of AgriSmart.',hardwareTitle:'3D Hardware Showcase',hardwareText:'Rotate, inspect and explore the visualized AgriSmart hardware in an interactive 3D viewer.',openDemo:'Open experience',repoTitle:'Want to inspect the hardware source?',repoText:'Explore the public repository for the AgriSmart 3D hardware showcase.',repoCTA:'View on GitHub',footer:'Project demonstrations & interactive showcase',footnote:'Open the external links to view each live experience.',copied:'Link copied',copyFailed:'Copy this URL:',lang:'العربية'},
+        ar:{navExplore:'استعرض التجارب',navSource:'الكود المصدري',eyebrow:'بوابة عرض المشروع للحكام',heroA:'اكتشف',heroB:'مستقبل',heroC:'الزراعة المتصلة.',heroText:'كل أجزاء AgriSmart في مكان واحد: المنصة الرقمية، واجهة التطبيق، وعرض الهاردوير التفاعلي ثلاثي الأبعاد. اختر أي تجربة لفتحها في صفحة مستقلة.',ctaExplore:'استعرض المشروع',ctaHardware:'شاهد الهاردوير 3D',sectionOverline:'المشروع في ثلاث تجارب',sectionTitle:'اختر الجزء اللي تحب تستكشفه.',sectionText:'كل بطاقة تفتح تجربة AgriSmart مستقلة في تبويب جديد.',platformTitle:'منصة AgriSmart',platformText:'استعرض المنصة الإلكترونية وتجربة المشروع المستضافة على Replit.',appTitle:'تطبيق AgriSmart',appText:'افتح واجهة التطبيق واستعرض الجانب البرمجي من المشروع.',hardwareTitle:'معرض الهاردوير 3D',hardwareText:'لفّ مجسمات هاردوير AgriSmart وتفقدها باستخدام عارض ثلاثي الأبعاد تفاعلي.',openDemo:'افتح التجربة',repoTitle:'عايز تشوف كود الهاردوير؟',repoText:'استعرض مستودع GitHub العام الخاص بمعرض الهاردوير ثلاثي الأبعاد.',repoCTA:'فتح GitHub',footer:'عروض المشروع والتجارب التفاعلية',footnote:'افتح الروابط الخارجية لاستعراض كل تجربة.',copied:'تم نسخ الرابط',copyFailed:'انسخ الرابط:',lang:'English'}
+      };
+      let lang='en',toastTimer;
+      const toggle=document.getElementById('langToggle'),toast=document.getElementById('toast');
+      const update=()=>{document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-t]').forEach(el=>{let value=translations[lang][el.dataset.t];if(value!==undefined)el.textContent=value});toggle.textContent=translations[lang].lang;toggle.setAttribute('aria-label',lang==='en'?'Switch to Arabic':'Switch to English')};
+      toggle.addEventListener('click',()=>{lang=lang==='en'?'ar':'en';update()});
+      function notice(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2300)}
+      document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{let url=btn.dataset.copy;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url)}else{let el=document.createElement('textarea');el.value=url;el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.select();if(!document.execCommand('copy'))throw new Error('copy failed');el.remove()}notice(translations[lang].copied)}catch(e){window.prompt(translations[lang].copyFailed,url)}}));
+      update();
+    })();
+  </script>
+</body>
+</html>
