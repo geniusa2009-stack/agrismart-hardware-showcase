@@ -2,39 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AgriSmart Hardware</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AgriSmart Hardware Explorer</title>
+<meta name="description" content="Interactive 3D explorer of the AgriSmart V4 field hardware: Sense, Control, Drip module and Connect.">
+<meta property="og:image" content="preview-three-quarter.png">
+<link rel="stylesheet" href="explorer/style.css">
 <script type="importmap">
 { "imports": {
   "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
   "three/addons/": "https://unpkg.com/three@0.184.0/examples/jsm/"
 } }
 </script>
-<style>
-  html, body { margin: 0; height: 100%; background: #eef1ef; font: 13px system-ui, sans-serif; }
-  #stage { position: fixed; inset: 0; background: radial-gradient(120% 90% at 50% 35%, #FFFFFF 0%, #EEF1EF 60%, #DCE2DF 100%); }
-  canvas { width: 100%; height: 100%; display: block; }
-  #bar { position: fixed; left: 12px; top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
-  #bar button { padding: 6px 10px; border: 1px solid #c9d1cd; background: #fff; border-radius: 6px; cursor: pointer; }
-</style>
 </head>
 <body>
-<div id="stage"><canvas id="c"></canvas></div>
-<div id="bar"></div>
-<script type="module">
-import { createViewer } from './example/viewer.js';
-const q = new URLSearchParams(location.search);
-const config = await (await fetch(q.get('config') || './viewer-config.json')).json();
-const canvas = document.getElementById('c');
-const v = await createViewer(canvas, config);
-window.V = v; window.CONFIG = config;
-const fit = () => { v.setSize(innerWidth, innerHeight); };
-addEventListener('resize', fit); fit();
-await v.load(q.get('model') || './agrismart-hardware-web.glb');
-v.view('threeQuarter');
-for (const k of Object.keys(config.views)) { const b = document.createElement('button'); b.textContent = k; b.onclick = () => v.view(k); document.getElementById('bar').append(b); }
-v.renderer.setAnimationLoop(() => { v.controls.update(); v.render(); });
-window.READY = true;
-</script>
+<canvas id="c" aria-label="Interactive 3D model of AgriSmart hardware"></canvas>
+<svg id="lines" aria-hidden="true"></svg>
+<div id="labels"></div>
+
+<header class="glass">
+  <img src="explorer/agrismart-logo.png" alt="AgriSmart">
+  <div><b>AgriSmart Hardware</b><span>V4 · Interactive explorer</span></div>
+  <nav><a href="judges/">Judges portal</a><a class="opt" href="example/">Simple viewer</a></nav>
+</header>
+
+<aside id="panel" class="glass">
+  <div class="head">
+    <h2><span>Components</span><span id="count"></span></h2>
+    <input id="search" type="search" placeholder="Search parts, IDs, functions" autocomplete="off" aria-label="Search components">
+  </div>
+  <div id="list" role="listbox" aria-label="Components"></div>
+  <section id="info" aria-live="polite">
+    <div class="meta" id="iMeta"></div>
+    <h3 id="iName"></h3>
+    <div class="cid" id="iId"></div>
+    <p id="iFn"></p>
+    <div class="acts">
+      <button class="b" id="aFocus">Focus</button>
+      <button class="b" id="aIso">Isolate</button>
+      <button class="b" id="aHide">Hide</button>
+      <button class="b" id="aClose">Close</button>
+    </div>
+  </section>
+</aside>
+
+<div id="bar" class="glass" role="toolbar" aria-label="View controls">
+  <button class="b" id="bReset" title="Reset view">Reset</button>
+  <button class="b" id="bFit" title="Fit to screen">Fit</button>
+  <button class="b" id="bShow" title="Show all parts">Show all</button>
+  <span class="sep hide-m"></span>
+  <label>Explode <input id="explode" type="range" min="0" max="1" step="0.01" value="0" aria-label="Exploded view"></label>
+  <span class="sep hide-m"></span>
+  <button class="b" id="bRotate" title="Auto-rotate">Rotate</button>
+  <button class="b on hide-m" id="bLabels" title="Labels">Labels</button>
+  <button class="b" id="toggleList">Parts</button>
+</div>
+
+<div id="note">Exterior-only visual design model of AgriSmart V4. Internal electronics are not published. Not engineering CAD; part names and functions from the V4 design registry.</div>
+<div id="loading"><div>Loading AgriSmart hardware<i></i></div></div>
+<script type="module" src="explorer/app.js"></script>
 </body>
 </html>

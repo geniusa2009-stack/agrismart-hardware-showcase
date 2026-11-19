@@ -1,0 +1,689 @@
+{
+ "source": "AgriSmart V4 approved viewer metadata (v4/data.js): English name, function, category, product. Explode offsets are the V4 design viewer offsets. Exterior components only.",
+ "components": [
+  {
+   "id": "SN-MEC-01",
+   "name": "Ground stake pole",
+   "fn": "Driven stake carrying enclosure and optional solar panel.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    -0.12
+   ]
+  },
+  {
+   "id": "SN-ENC-01",
+   "name": "Main enclosure (base)",
+   "fn": "Sealed housing for Sense electronics and battery; carries cable entries, vent and antenna bulkhead.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "SN-ENC-02",
+   "name": "Front cover",
+   "fn": "Removable service cover with AgriSmart identity, status LED window.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    0.22399999999999998
+   ]
+  },
+  {
+   "id": "SN-ENC-03",
+   "name": "Cover gasket",
+   "fn": "Compression seal between cover and base. Sealing performance unvalidated.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    0.168
+   ]
+  },
+  {
+   "id": "SN-FST-01",
+   "name": "Cover screws ×4",
+   "fn": "Stainless captive screws clamping cover onto gasket.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    0.3
+   ]
+  },
+  {
+   "id": "SN-MEC-02",
+   "name": "Pole mounting bracket",
+   "fn": "Back plate with two U-clamps fixing the enclosure to the pole.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    -0.06
+   ]
+  },
+  {
+   "id": "SN-ENC-04",
+   "name": "Pressure-equalising vent",
+   "fn": "ePTFE membrane vent to limit condensation pumping through the gasket.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    -0.05,
+    0
+   ]
+  },
+  {
+   "id": "SN-CON-01",
+   "name": "M12 sensor connector",
+   "fn": "Panel-mount circular connector so probes can be replaced without opening enclosure.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    -0.06,
+    0
+   ]
+  },
+  {
+   "id": "SN-MEC-05",
+   "name": "Cable gland — solar input",
+   "fn": "Sealed entry for solar cable (blanking plug when solar not fitted).",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    -0.06,
+    0
+   ]
+  },
+  {
+   "id": "SN-RF-03",
+   "name": "SMA bulkhead connector",
+   "fn": "Sealed RF feed-through for antenna.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0.06,
+    0
+   ]
+  },
+  {
+   "id": "SN-RF-02",
+   "name": "External LoRa antenna",
+   "fn": "Band-matched whip antenna. Gain/band TBD after country selection.",
+   "cat": "Communications",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0.13,
+    0
+   ]
+  },
+  {
+   "id": "SN-SOL-01",
+   "name": "Solar panel (optional)",
+   "fn": "Small PV module. Wattage TBD from power budget.",
+   "cat": "Power Systems",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0.14,
+    0
+   ]
+  },
+  {
+   "id": "SN-SOL-02",
+   "name": "Solar tilt bracket",
+   "fn": "Fixed-tilt bracket; tilt angle TBD by site latitude.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0.08,
+    0
+   ]
+  },
+  {
+   "id": "SN-SOL-03",
+   "name": "Solar fasteners",
+   "fn": "Stainless bolts fixing panel frame to bracket.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0.22,
+    0
+   ]
+  },
+  {
+   "id": "SN-CBL-04",
+   "name": "Solar cable",
+   "fn": "Panel junction box to SN-MEC-05 gland, clipped along pole.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "SN-SEN-01",
+   "name": "DFRobot SEN0600 soil moisture + temperature probe",
+   "fn": "RS485 Modbus-RTU soil moisture and temperature probe — Sense Basic.",
+   "cat": "Sensors",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    -0.12,
+    0
+   ]
+  },
+  {
+   "id": "SN-CBL-01",
+   "name": "Sensor cable (detachable)",
+   "fn": "Probe lead terminated in M12 plug. DFRobot probes ship with 2 m cable; extension/termination TBD.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Sense",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "CT-MEC-01",
+   "name": "Mounting post",
+   "fn": "Square post (V3 geometry) carrying enclosure and solar panel.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    -0.14
+   ]
+  },
+  {
+   "id": "CT-ENC-01",
+   "name": "Control enclosure (base)",
+   "fn": "V3 enclosure carried forward: houses controller, power, battery, driver module.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "CT-ENC-02",
+   "name": "Front cover",
+   "fn": "Service cover with AgriSmart identity and status LED.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    0.27999999999999997
+   ]
+  },
+  {
+   "id": "CT-ENC-03",
+   "name": "Cover gasket",
+   "fn": "Cover seal — sealing unvalidated.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    0.21000000000000002
+   ]
+  },
+  {
+   "id": "CT-FST-01",
+   "name": "Cover screws ×4",
+   "fn": "Captive stainless cover screws.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    0.36000000000000004
+   ]
+  },
+  {
+   "id": "CT-MEC-04",
+   "name": "Pole mounting bracket",
+   "fn": "Mount plate + U-clamps.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    -0.06
+   ]
+  },
+  {
+   "id": "CT-ENC-04",
+   "name": "Pressure-equalising vent",
+   "fn": "Membrane vent.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0.05,
+    0
+   ]
+  },
+  {
+   "id": "CT-CON-01",
+   "name": "Actuator output connector",
+   "fn": "Sealed circular connector to valve/actuator cable. Pin-out depends on driver module.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    -0.07,
+    0
+   ]
+  },
+  {
+   "id": "CT-CON-02",
+   "name": "Sensor input connectors ×2",
+   "fn": "Flow / pressure / level inputs.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    -0.07,
+    0
+   ]
+  },
+  {
+   "id": "CT-CON-03",
+   "name": "Power input connector",
+   "fn": "Solar / external DC input.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    -0.07,
+    0
+   ]
+  },
+  {
+   "id": "CT-MEC-05",
+   "name": "Cable gland — 24 VAC / spare",
+   "fn": "Entry for 24 VAC supply (sprinkler) — blanking plug otherwise.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    -0.07,
+    0
+   ]
+  },
+  {
+   "id": "CT-RF-03",
+   "name": "SMA bulkhead connector",
+   "fn": "RF feed-through.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0.06,
+    0
+   ]
+  },
+  {
+   "id": "CT-RF-02",
+   "name": "External LoRa antenna",
+   "fn": "Band-matched whip.",
+   "cat": "Communications",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0.13,
+    0
+   ]
+  },
+  {
+   "id": "CT-SOL-01",
+   "name": "Solar panel (optional)",
+   "fn": "V3 panel carried forward; wattage TBD.",
+   "cat": "Power Systems",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0.14,
+    0
+   ]
+  },
+  {
+   "id": "CT-SOL-02",
+   "name": "Solar tilt bracket",
+   "fn": "Fixed-tilt bracket and hinge.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0.08,
+    0
+   ]
+  },
+  {
+   "id": "CT-CBL-01",
+   "name": "Solar cable",
+   "fn": "Panel to CT-CON-03.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Control",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "DR-FIT-01",
+   "name": "PE pipe & 1\" fittings",
+   "fn": "Male adapters and supply pipe around valve and sensors.",
+   "cat": "Mechanical Components",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "DR-VLV-01",
+   "name": "Hunter PGV-101G-class globe valve",
+   "fn": "1\" (25 mm) globe valve with flow control for pressurised drip zones.",
+   "cat": "Irrigation Actuators",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0.06,
+    0
+   ]
+  },
+  {
+   "id": "DR-SOL-01",
+   "name": "DC-latching solenoid",
+   "fn": "Pulse-operated solenoid for battery operation. A latching valve stays in its last state on power loss — it is NOT fail-closed; a safe-close energy reserve must be engineered.",
+   "cat": "Irrigation Actuators",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0.12,
+    0
+   ]
+  },
+  {
+   "id": "DR-CON-01",
+   "name": "Waterproof wire connectors",
+   "fn": "Gel-filled direct-burial splices at solenoid leads.",
+   "cat": "Connectors and Cables",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0.12,
+    0.04
+   ]
+  },
+  {
+   "id": "DR-FLW-01",
+   "name": "In-line flow meter (optional)",
+   "fn": "Pulse-output flow meter for delivered-volume and leak detection.",
+   "cat": "Sensors",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0.07,
+    0
+   ]
+  },
+  {
+   "id": "DR-PRS-01",
+   "name": "Pressure transducer (optional)",
+   "fn": "Downstream pressure to confirm valve state and detect bursts.",
+   "cat": "Sensors",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0.09,
+    0
+   ]
+  },
+  {
+   "id": "DR-CBL-01",
+   "name": "Valve cable",
+   "fn": "Control actuator output → solenoid. Length and gauge TBD (voltage drop).",
+   "cat": "Connectors and Cables",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "DR-CBL-02",
+   "name": "Sensor cables (flow / pressure)",
+   "fn": "Sensor leads to CT-CON-02.",
+   "cat": "Connectors and Cables",
+   "product": "Drip Module",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "CN-MEC-01",
+   "name": "Gateway mast",
+   "fn": "Round mast. Height, wind load and foundation TBD.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    -0.15
+   ]
+  },
+  {
+   "id": "CN-ENC-01",
+   "name": "Gateway enclosure (base)",
+   "fn": "Larger outdoor enclosure for gateway electronics.",
+   "cat": "Gateway Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "CN-ENC-02",
+   "name": "Front cover with light pipes",
+   "fn": "Service cover; status LED light-pipe window.",
+   "cat": "Gateway Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    0.33599999999999997
+   ]
+  },
+  {
+   "id": "CN-ENC-03",
+   "name": "Cover gasket",
+   "fn": "Cover seal — unvalidated.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    0.252
+   ]
+  },
+  {
+   "id": "CN-FST-01",
+   "name": "Cover screws ×4",
+   "fn": "Captive stainless screws.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    0.432
+   ]
+  },
+  {
+   "id": "CN-MEC-02",
+   "name": "Mast bracket & U-bolts",
+   "fn": "Fixes enclosure to mast.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    -0.06
+   ]
+  },
+  {
+   "id": "CN-ENC-04",
+   "name": "Pressure-equalising vent",
+   "fn": "Membrane vent.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    -0.05,
+    0
+   ]
+  },
+  {
+   "id": "CN-RF-04",
+   "name": "N-type bulkheads ×3",
+   "fn": "Sealed RF feed-throughs.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0.06,
+    0
+   ]
+  },
+  {
+   "id": "CN-PWR-02",
+   "name": "RF surge arrester",
+   "fn": "In-line arrester on LoRa antenna feed, bonded to earth lug.",
+   "cat": "Gateway Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0.12,
+    0
+   ]
+  },
+  {
+   "id": "CN-RF-03",
+   "name": "LTE antennas ×2",
+   "fn": "Main + diversity LTE antennas.",
+   "cat": "Gateway Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0.16,
+    0
+   ]
+  },
+  {
+   "id": "CN-MEC-05",
+   "name": "Cable glands ×2 (power / Ethernet)",
+   "fn": "Sealed entries for DC/PoE and Ethernet.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    -0.07,
+    0
+   ]
+  },
+  {
+   "id": "CN-MEC-06",
+   "name": "Earthing lug",
+   "fn": "Bonding point for mast, surge arrester and enclosure. Earthing design TBD by installer.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0.06,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "CN-UI-01",
+   "name": "Status LED light pipes",
+   "fn": "Power / LoRa / backhaul indicators.",
+   "cat": "Gateway Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    0.3
+   ]
+  },
+  {
+   "id": "CN-MEC-07",
+   "name": "Antenna mast bracket",
+   "fn": "Stand-off arm for LoRa antenna at mast top.",
+   "cat": "Mechanical Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0.1,
+    0
+   ]
+  },
+  {
+   "id": "CN-RF-02",
+   "name": "LoRa fibreglass antenna",
+   "fn": "Outdoor omni antenna, band-matched; gain TBD.",
+   "cat": "Gateway Components",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0.2,
+    0
+   ]
+  },
+  {
+   "id": "CN-CBL-02",
+   "name": "LoRa antenna coax",
+   "fn": "Low-loss coax antenna → arrester. Length/loss TBD.",
+   "cat": "Connectors and Cables",
+   "product": "AgriSmart Connect",
+   "explodeOffset": [
+    0,
+    0,
+    0
+   ]
+  }
+ ]
+}
