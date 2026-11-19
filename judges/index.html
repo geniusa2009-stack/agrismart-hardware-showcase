@@ -123,13 +123,18 @@
     @media(max-width:800px){.hero{padding:46px 0 56px}.hero-graphic{max-width:470px}.nav-end{gap:13px}}
     @media(max-width:580px){.cards{grid-template-columns:1fr}.brand-name strong{font-size:21px}.brand-name small{font-size:6.8px}.official-logo{width:39px;height:43px}.nav{padding:15px 0}.hero h1{letter-spacing:-1.6px}.card-art{height:167px}.card p{min-height:0}.bottom-panel{margin-bottom:44px}}
     @media print{.dark-zone{background:#f0fff7!important;color:#10372b!important}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card p{min-height:0}}
+
+    /* Official AgriSmart logo shown directly, without duplicate text or logo treatments */
+    .brand{display:inline-flex;align-items:center;justify-content:flex-start;flex:none;gap:0;padding:2px 0;background:none!important;border:0!important;box-shadow:none!important}
+    .brand-logo-image{display:block;width:76px;height:auto;aspect-ratio:384/419;object-fit:contain;max-width:100%;mix-blend-mode:normal;filter:none!important;transform:none!important}
+    @media(max-width:580px){.brand-logo-image{width:61px}}
   </style>
 </head>
 <body>
   <div class="dark-zone">
     <header class="nav wrap">
       <a class="brand" href="#top" aria-label="AgriSmart home">
-        <span class="official-logo"><img src="https://raw.githubusercontent.com/geniusa2009-stack/agrismart/main/logo.png" width="49" height="53" alt="AgriSmart logo"></span><span class="brand-name"><strong>Agri<span>Smart</span></strong><small>SMART FARMING. BETTER FUTURE.</small></span>
+        <img class="brand-logo-image" src="https://raw.githubusercontent.com/geniusa2009-stack/agrismart/main/logo.png" width="76" height="83" alt="AgriSmart — Smart Farming. Better Future." decoding="async">
       </a>
       <div class="nav-end">
         <a class="nav-link" href="#experiences" data-t="navExplore">Explore demos</a>
