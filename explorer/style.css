@@ -69,7 +69,6 @@ button.b.on { background: rgba(27, 138, 90, .45); border-color: var(--green-hi);
 #loading div { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
 #loading i { display: block; width: 180px; height: 2px; margin: 14px auto 0; background: var(--line); overflow: hidden; }
 #loading i::after { content: ""; display: block; height: 100%; width: var(--p, 10%); background: var(--green-hi); transition: width .2s; }
-#note { position: fixed; left: 16px; bottom: 18px; font-size: 11px; color: var(--muted); max-width: 300px; z-index: 2; }
 #toggleList { display: none; }
 
 @media (max-width: 820px) {
@@ -83,6 +82,5 @@ button.b.on { background: rgba(27, 138, 90, .45); border-color: var(--green-hi);
   #bar .hide-m { display: none; }
   #explode { width: 84px; }
   #toggleList { display: inline-block; }
-  #note { display: none; }
   .lbl { max-width: 160px; font-size: 12px; }
 }
