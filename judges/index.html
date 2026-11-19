@@ -98,19 +98,42 @@
     @media(max-width:580px){.wrap{width:min(100% - 32px,1160px)}.nav{padding:19px 0}.brand{font-size:19px}.brand-mark{width:36px;height:36px}.nav-link{display:none}.hero{padding:47px 0 60px}.hero h1{font-size:clamp(36px,9.5vw,53px);line-height:1.1;letter-spacing:-1.9px}.hero p{font-size:14px;margin:24px 0 27px}.orbital{aspect-ratio:1.2}.orbital svg{width:90%}.intro{display:block}.intro h2{font-size:35px}.section-count{margin-top:18px}.cards{grid-template-columns:1fr;gap:17px}.card-art{height:170px}.card p{min-height:0}.bottom-panel{flex-direction:column;align-items:stretch;padding:22px;gap:22px;margin-bottom:48px}.repo-link{justify-content:center}.footer-inner{flex-wrap:wrap}.hero-graphic{padding:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
     @media print{.dark-zone{print-color-adjust:exact;-webkit-print-color-adjust:exact}.card-art{print-color-adjust:exact;-webkit-print-color-adjust:exact}.lang,.card-copy{display:none}.hero{min-height:auto;padding:34px 0}.orbital{max-width:300px}.cards{gap:10px}.card-content{padding:12px}.bottom-panel{margin-bottom:20px}a{color:inherit}}
+
+    /* Premium AgriSmart judges refresh */
+    .dark-zone{color:#10372b;background:radial-gradient(ellipse 60% 90% at 90% 75%,#c3f1df 0%,transparent 75%),radial-gradient(ellipse 50% 70% at 0% 0%,#e4faf0 0%,transparent 80%),linear-gradient(115deg,#fff,#f4fdf9 64%,#e4f6f2)}
+    .dark-zone::after{opacity:.46;background-image:linear-gradient(#32856b0d 1px,transparent 1px),linear-gradient(90deg,#32856b0d 1px,transparent 1px)}
+    .nav{padding:16px 0;border-bottom:1px solid #c5e1d4}
+    .brand{gap:12px}.official-logo{width:51px;height:55px;display:grid;place-items:center;flex:none}.official-logo img{width:100%;height:100%;object-fit:contain}
+    .brand-name{display:flex;flex-direction:column;line-height:1.13;gap:4px}
+    .brand-name strong{font-size:25px;letter-spacing:-1.2px;color:#23a052;font-weight:850}
+    .brand-name strong span{color:#095267}.brand-name small{font-size:8px;font-weight:780;letter-spacing:1.05px;color:#178c92;white-space:nowrap}
+    .nav-link{color:#275745;font-size:13px}.nav-link:hover{color:#00966a}
+    .lang{color:#145642;background:#fff;border-color:#b8d9c8}.lang:hover{background:#e5f9ed}
+    .hero{min-height:490px;padding:61px 0 67px}.eyebrow{color:#138858}
+    .hero h1{color:#09362c;letter-spacing:-3.3px}.hero h1 .mint{color:#17a977}.hero p{color:#577267}
+    .btn-primary{color:#fff;background:linear-gradient(110deg,#2bbc63,#009f83);border:1px solid #2abc73;box-shadow:0 9px 23px #24af8430}.btn-primary:hover{background:#29b975}
+    .btn-quiet{color:#0b7056;background:#fff;border:1px solid #a4d6c2;box-shadow:0 6px 18px #236b5020}.btn-quiet:hover{background:#ecfff5}
+    .orbital{background:linear-gradient(140deg,#0d513e,#073228);border:1px solid #299c7138;box-shadow:0 30px 70px #18584430}
+    .intro{padding-top:56px}.cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .card{border-color:#cde6db;box-shadow:0 11px 27px #1756370c}.card-art{height:158px}.card-art svg{height:141px}
+    .card-content{padding:20px 19px 18px}.card h3{font-size:21px}.card p{font-size:12.6px;min-height:82px;line-height:1.6}.card-number{font-size:9px;letter-spacing:1.6px}
+    .art-presentation{background:radial-gradient(circle at 80% 20%,#9fffd38c,transparent 52%),linear-gradient(135deg,#e5fff0,#d4f4f1)}
+    .bottom-panel{border-color:#abd8bf;box-shadow:0 10px 28px #143d2610}
+    @media(max-width:1120px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card p{min-height:0}.card-art{height:180px}.card-art svg{height:151px}}
+    @media(max-width:800px){.hero{padding:46px 0 56px}.hero-graphic{max-width:470px}.nav-end{gap:13px}}
+    @media(max-width:580px){.cards{grid-template-columns:1fr}.brand-name strong{font-size:21px}.brand-name small{font-size:6.8px}.official-logo{width:39px;height:43px}.nav{padding:15px 0}.hero h1{letter-spacing:-1.6px}.card-art{height:167px}.card p{min-height:0}.bottom-panel{margin-bottom:44px}}
+    @media print{.dark-zone{background:#f0fff7!important;color:#10372b!important}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card p{min-height:0}}
   </style>
 </head>
 <body>
   <div class="dark-zone">
     <header class="nav wrap">
       <a class="brand" href="#top" aria-label="AgriSmart home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12.2 20V9.2M12.2 13.7C7.2 13.7 5 10.2 5 5.2c4.8-.1 8 2.1 8 7.5M12.1 17.3c5.1.1 7.5-2.8 7.6-8.1-5.1-.1-8.1 2.9-8.1 8" stroke="#8bf4b8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        AgriSmart
+        <span class="official-logo"><img src="https://raw.githubusercontent.com/geniusa2009-stack/agrismart/main/logo.png" width="49" height="53" alt="AgriSmart logo"></span><span class="brand-name"><strong>Agri<span>Smart</span></strong><small>SMART FARMING. BETTER FUTURE.</small></span>
       </a>
       <div class="nav-end">
         <a class="nav-link" href="#experiences" data-t="navExplore">Explore demos</a>
+        <a class="nav-link" href="#presentation" data-t="navPresentation">Presentation</a>
         <a class="nav-link" href="#source" data-t="navSource">Source code</a>
         <button class="lang" id="langToggle" type="button" aria-label="Switch language">العربية</button>
       </div>
@@ -119,7 +142,7 @@
       <div>
         <div class="eyebrow" data-t="eyebrow">JUDGES' EXPERIENCE PORTAL</div>
         <h1><span data-t="heroA">Explore a</span> <span class="mint" data-t="heroB">connected</span><br/><span data-t="heroC">farming future.</span></h1>
-        <p data-t="heroText">One place to explore AgriSmart's platform, application interface, and interactive 3D hardware showcase. Select any experience below to open its dedicated live demo.</p>
+        <p data-t="heroText">Discover the live platform, application demo, interactive 3D hardware and project presentation — all in one place.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#experiences"><span data-t="ctaExplore">Explore the project</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
           <a class="btn btn-quiet" href="https://geniusa2009-stack.github.io/agrismart-hardware-showcase/" target="_blank" rel="noopener noreferrer"><span data-t="ctaHardware">View 3D hardware</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -169,8 +192,8 @@
 
   <section class="wrap" id="experiences">
     <div class="intro">
-      <div><div class="section-overline" data-t="sectionOverline">THE PROJECT, IN THREE EXPERIENCES</div><h2 data-t="sectionTitle">Choose what you'd like to explore.</h2><p data-t="sectionText">Each card opens a separate AgriSmart experience in a new browser tab.</p></div>
-      <div class="section-count">01 — 03 / AGRISMART</div>
+      <div><div class="section-overline" data-t="sectionOverline">THE PROJECT, IN FOUR EXPERIENCES</div><h2 data-t="sectionTitle">Choose what you'd like to explore.</h2><p data-t="sectionText">Each card opens a separate AgriSmart experience in a new browser tab.</p></div>
+      <div class="section-count">01 — 04 / AGRISMART</div>
     </div>
     <div class="cards">
       <article class="card">
@@ -260,6 +283,34 @@
           </div>
         </div>
       </article>
+      <article class="card" id="presentation">
+        <div class="card-art art-presentation">
+          <span class="art-label">PITCH DECK</span>
+          <svg viewBox="0 0 330 165" role="img" aria-label="Pitch presentation illustration">
+            <defs><linearGradient id="pitchGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eafff0"/><stop offset="1" stop-color="#b7f5e6"/></linearGradient></defs>
+            <rect x="50" y="22" width="230" height="116" rx="14" fill="#0b5046" opacity=".13"/>
+            <rect x="56" y="16" width="218" height="118" rx="12" fill="white" stroke="#5abda1" stroke-width="2.5"/>
+            <rect x="69" y="29" width="191" height="23" rx="5" fill="url(#pitchGrad)"/>
+            <path d="M84 41h73" stroke="#168965" stroke-width="4" stroke-linecap="round"/>
+            <path d="M84 61h56m-56 12h45m-45 12h57" stroke="#8bbbab" stroke-width="3.2" stroke-linecap="round"/>
+            <rect x="170" y="79" width="18" height="33" rx="3" fill="#71dbac"/>
+            <rect x="195" y="66" width="18" height="46" rx="3" fill="#32b989"/>
+            <rect x="220" y="55" width="18" height="57" rx="3" fill="#128a72"/>
+            <path d="M165 134v10m-40 0h80" stroke="#176753" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="281" cy="45" r="18" fill="#e0fff0" stroke="#70d2aa"/>
+            <path d="m275 45 5 5 9-11" stroke="#20a16f" stroke-width="3.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <div class="card-number">EXPERIENCE 04 / GOOGLE SLIDES</div>
+          <h3 data-t="presentationTitle">Pitch Presentation</h3>
+          <p data-t="presentationText">Explore the project story, system concept and engineering presentation.</p>
+          <div class="card-bottom">
+            <a class="card-open" href="https://docs.google.com/presentation/d/1z5v49iZvab1W1-6Dvy4p2F6wWr3XK7wP/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><span data-t="openPresentation">Open presentation</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <button class="card-copy" data-copy="https://docs.google.com/presentation/d/1z5v49iZvab1W1-6Dvy4p2F6wWr3XK7wP/edit?slide=id.p1#slide=id.p1" type="button" aria-label="Copy presentation link" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -278,8 +329,8 @@
   <script>
     (()=>{
       const translations={
-        en:{navExplore:'Explore demos',navSource:'Source code',eyebrow:"JUDGES' EXPERIENCE PORTAL",heroA:'Explore a',heroB:'connected',heroC:'farming future.',heroText:"One place to explore AgriSmart's platform, application interface, and interactive 3D hardware showcase. Select any experience below to open its dedicated live demo.",ctaExplore:'Explore the project',ctaHardware:'View 3D hardware',sectionOverline:'THE PROJECT, IN THREE EXPERIENCES',sectionTitle:"Choose what you'd like to explore.",sectionText:'Each card opens a separate AgriSmart experience in a new browser tab.',platformTitle:'AgriSmart Platform',platformText:'Explore the web platform and its project experience, hosted on Replit.',appTitle:'AgriSmart App',appText:'Open the application interface to see the software side of AgriSmart.',hardwareTitle:'3D Hardware Showcase',hardwareText:'Rotate, inspect and explore the visualized AgriSmart hardware in an interactive 3D viewer.',openDemo:'Open experience',repoTitle:'Want to inspect the hardware source?',repoText:'Explore the public repository for the AgriSmart 3D hardware showcase.',repoCTA:'View on GitHub',footer:'Project demonstrations & interactive showcase',footnote:'Open the external links to view each live experience.',copied:'Link copied',copyFailed:'Copy this URL:',lang:'العربية'},
-        ar:{navExplore:'استعرض التجارب',navSource:'الكود المصدري',eyebrow:'بوابة عرض المشروع للحكام',heroA:'اكتشف',heroB:'مستقبل',heroC:'الزراعة المتصلة.',heroText:'كل أجزاء AgriSmart في مكان واحد: المنصة الرقمية، واجهة التطبيق، وعرض الهاردوير التفاعلي ثلاثي الأبعاد. اختر أي تجربة لفتحها في صفحة مستقلة.',ctaExplore:'استعرض المشروع',ctaHardware:'شاهد الهاردوير 3D',sectionOverline:'المشروع في ثلاث تجارب',sectionTitle:'اختر الجزء اللي تحب تستكشفه.',sectionText:'كل بطاقة تفتح تجربة AgriSmart مستقلة في تبويب جديد.',platformTitle:'منصة AgriSmart',platformText:'استعرض المنصة الإلكترونية وتجربة المشروع المستضافة على Replit.',appTitle:'تطبيق AgriSmart',appText:'افتح واجهة التطبيق واستعرض الجانب البرمجي من المشروع.',hardwareTitle:'معرض الهاردوير 3D',hardwareText:'لفّ مجسمات هاردوير AgriSmart وتفقدها باستخدام عارض ثلاثي الأبعاد تفاعلي.',openDemo:'افتح التجربة',repoTitle:'عايز تشوف كود الهاردوير؟',repoText:'استعرض مستودع GitHub العام الخاص بمعرض الهاردوير ثلاثي الأبعاد.',repoCTA:'فتح GitHub',footer:'عروض المشروع والتجارب التفاعلية',footnote:'افتح الروابط الخارجية لاستعراض كل تجربة.',copied:'تم نسخ الرابط',copyFailed:'انسخ الرابط:',lang:'English'}
+        en:{navExplore:'Explore demos',navPresentation:'Presentation',navSource:'Source code',eyebrow:"JUDGES' EXPERIENCE PORTAL",heroA:'Explore a',heroB:'connected',heroC:'farming future.',heroText:"Discover the live platform, application demo, interactive 3D hardware and project presentation — all in one place.",ctaExplore:'Explore the project',ctaHardware:'View 3D hardware',sectionOverline:'THE PROJECT, IN FOUR EXPERIENCES',sectionTitle:"Choose what you'd like to explore.",sectionText:'Each card opens a separate AgriSmart experience in a new browser tab.',platformTitle:'AgriSmart Platform',platformText:'Explore the web platform and its project experience, hosted on Replit.',appTitle:'AgriSmart App',appText:'Open the application interface to see the software side of AgriSmart.',hardwareTitle:'3D Hardware Showcase',hardwareText:'Rotate, inspect and explore the visualized AgriSmart hardware in an interactive 3D viewer.',presentationTitle:'Pitch Presentation',presentationText:'Explore the project story, system concept and engineering presentation.',openPresentation:'Open presentation',openDemo:'Open experience',repoTitle:'Want to inspect the hardware source?',repoText:'Explore the public repository for the AgriSmart 3D hardware showcase.',repoCTA:'View on GitHub',footer:'Project demonstrations & interactive showcase',footnote:'Open the external links to view each live experience.',copied:'Link copied',copyFailed:'Copy this URL:',lang:'العربية'},
+        ar:{navExplore:'استعرض التجارب',navPresentation:'العرض التقديمي',navSource:'الكود المصدري',eyebrow:'بوابة عرض المشروع للحكام',heroA:'اكتشف',heroB:'مستقبل',heroC:'الزراعة المتصلة.',heroText:'كل أجزاء AgriSmart في مكان واحد: المنصة الرقمية، واجهة التطبيق، وعرض الهاردوير ثلاثي الأبعاد، والبرزنتيشن. اختر أي تجربة لفتحها في صفحة مستقلة.',ctaExplore:'استعرض المشروع',ctaHardware:'شاهد الهاردوير 3D',sectionOverline:'المشروع في أربع تجارب',sectionTitle:'اختر الجزء اللي تحب تستكشفه.',sectionText:'كل بطاقة تفتح تجربة AgriSmart مستقلة في تبويب جديد.',platformTitle:'منصة AgriSmart',platformText:'استعرض المنصة الإلكترونية وتجربة المشروع المستضافة على Replit.',appTitle:'تطبيق AgriSmart',appText:'افتح واجهة التطبيق واستعرض الجانب البرمجي من المشروع.',hardwareTitle:'معرض الهاردوير 3D',hardwareText:'لفّ مجسمات هاردوير AgriSmart وتفقدها باستخدام عارض ثلاثي الأبعاد تفاعلي.',presentationTitle:'العرض التقديمي',presentationText:'شاهد قصة المشروع وفكرته وتفاصيله الهندسية في عرض Google Slides.',openPresentation:'افتح البرزنتيشن',openDemo:'افتح التجربة',repoTitle:'عايز تشوف كود الهاردوير؟',repoText:'استعرض مستودع GitHub العام الخاص بمعرض الهاردوير ثلاثي الأبعاد.',repoCTA:'فتح GitHub',footer:'عروض المشروع والتجارب التفاعلية',footnote:'افتح الروابط الخارجية لاستعراض كل تجربة.',copied:'تم نسخ الرابط',copyFailed:'انسخ الرابط:',lang:'English'}
       };
       let lang='en',toastTimer;
       const toggle=document.getElementById('langToggle'),toast=document.getElementById('toast');
