@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgriSmart Hardware</title>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.184.0/examples/jsm/"
+} }
+</script>
+<style>
+  html, body { margin: 0; height: 100%; background: #eef1ef; font: 13px system-ui, sans-serif; }
+  #stage { position: fixed; inset: 0; background: radial-gradient(120% 90% at 50% 35%, #FFFFFF 0%, #EEF1EF 60%, #DCE2DF 100%); }
+  canvas { width: 100%; height: 100%; display: block; }
+  #bar { position: fixed; left: 12px; top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+  #bar button { padding: 6px 10px; border: 1px solid #c9d1cd; background: #fff; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="c"></canvas></div>
+<div id="bar"></div>
+<script type="module">
+import { createViewer } from './example/viewer.js';
+const q = new URLSearchParams(location.search);
+const config = await (await fetch(q.get('config') || './viewer-config.json')).json();
+const canvas = document.getElementById('c');
+const v = await createViewer(canvas, config);
+window.V = v; window.CONFIG = config;
+const fit = () => { v.setSize(innerWidth, innerHeight); };
+addEventListener('resize', fit); fit();
+await v.load(q.get('model') || './agrismart-hardware-web.glb');
+v.view('threeQuarter');
+for (const k of Object.keys(config.views)) { const b = document.createElement('button'); b.textContent = k; b.onclick = () => v.view(k); document.getElementById('bar').append(b); }
+v.renderer.setAnimationLoop(() => { v.controls.update(); v.render(); });
+window.READY = true;
+</script>
+</body>
+</html>

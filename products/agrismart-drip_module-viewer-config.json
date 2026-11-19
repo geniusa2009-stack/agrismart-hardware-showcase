@@ -1,0 +1,200 @@
+{
+ "model": "products/agrismart-drip_module-web.glb",
+ "units": "metres",
+ "upAxis": "+Y",
+ "front": "+Z",
+ "scale": 1.0,
+ "rotation_deg": [
+  0,
+  0,
+  0
+ ],
+ "origin": "Ground contact at y = 0, plan centre at x = z = 0. Do not rescale or rotate to match the approved views.",
+ "offsetFromOriginalV4Frame": [
+  0.41069,
+  -0.005,
+  -0.0089
+ ],
+ "boundingBox": {
+  "min": [
+   -0.4893,
+   0,
+   -0.1411
+  ],
+  "max": [
+   0.4893,
+   0.6304,
+   0.1411
+  ]
+ },
+ "renderer": {
+  "three": "r184 (0.184.0)",
+  "outputColorSpace": "SRGBColorSpace",
+  "toneMapping": "ACESFilmicToneMapping",
+  "toneMappingExposure": 1.05,
+  "shadows": true,
+  "shadowMapType": "PCFSoftShadowMap",
+  "antialias": true,
+  "alpha": true,
+  "pixelRatioMax": 2,
+  "textureAnisotropy": 8
+ },
+ "environment": {
+  "hdri": null,
+  "scene.environment": null,
+  "note": "The approved V4 look uses no environment map or HDRI. All light comes from the four lights below. Adding an HDRI changes the look, metals especially."
+ },
+ "background": {
+  "css": "radial-gradient(120% 90% at 50% 35%, #FFFFFF 0%, #EEF1EF 60%, #DCE2DF 100%)",
+  "note": "CSS behind a transparent canvas (alpha: true), as in the original viewer"
+ },
+ "lights": {
+  "hemisphere": {
+   "skyColor": "#ffffff",
+   "groundColor": "#d8d2c4",
+   "intensity": 0.95
+  },
+  "key": {
+   "color": "#ffffff",
+   "intensity": 2.2,
+   "position": [
+    3.58931,
+    7.005,
+    5.0089
+   ],
+   "castShadow": true,
+   "shadowMapSize": 2048,
+   "shadowBias": -0.0002,
+   "shadowCameraHalfSize": 6.266360652507332,
+   "target": [
+    -0.41069,
+    0.005,
+    0.0089
+   ]
+  },
+  "fill": {
+   "color": "#fff4e6",
+   "intensity": 0.5,
+   "position": [
+    -5.41069,
+    3.005,
+    -3.9911
+   ],
+   "castShadow": false,
+   "target": [
+    -0.41069,
+    0.005,
+    0.0089
+   ]
+  },
+  "rim": {
+   "color": "#bff0d8",
+   "intensity": 0.4,
+   "position": [
+    -3.41069,
+    2.505,
+    -3.9911
+   ],
+   "castShadow": false,
+   "target": [
+    -0.41069,
+    0.005,
+    0.0089
+   ]
+  }
+ },
+ "ground": {
+  "y": 0.0,
+  "type": "ShadowMaterial plane 200 x 200 m",
+  "shadowOpacity": 0.12
+ },
+ "camera": {
+  "type": "PerspectiveCamera",
+  "fov": 45,
+  "near": 0.0071,
+  "far": 84.62
+ },
+ "controls": {
+  "type": "OrbitControls",
+  "enableDamping": true,
+  "dampingFactor": 0.08
+ },
+ "views": {
+  "front": {
+   "position": [
+    0.0,
+    0.4151,
+    0.9962
+   ],
+   "target": [
+    0.0,
+    0.3152,
+    0.0
+   ],
+   "azimuth_rad": 0.0,
+   "elevation_rad": 0.1,
+   "aspect_fitted": 1.6
+  },
+  "side": {
+   "position": [
+    1.4033,
+    0.456,
+    0.0
+   ],
+   "target": [
+    0.0,
+    0.3152,
+    0.0
+   ],
+   "azimuth_rad": 1.5708,
+   "elevation_rad": 0.1,
+   "aspect_fitted": 1.6
+  },
+  "back": {
+   "position": [
+    0.0,
+    0.4151,
+    -0.9962
+   ],
+   "target": [
+    0.0,
+    0.3152,
+    0.0
+   ],
+   "azimuth_rad": 3.1416,
+   "elevation_rad": 0.1,
+   "aspect_fitted": 1.6
+  },
+  "top": {
+   "position": [
+    0.0,
+    1.3854,
+    0.4161
+   ],
+   "target": [
+    0.0,
+    0.3152,
+    0.0
+   ],
+   "azimuth_rad": 0.0,
+   "elevation_rad": 1.2,
+   "aspect_fitted": 1.6
+  },
+  "threeQuarter": {
+   "position": [
+    0.6279,
+    0.5091,
+    1.0242
+   ],
+   "target": [
+    0.0,
+    0.3152,
+    0.0
+   ],
+   "azimuth_rad": 0.55,
+   "elevation_rad": 0.16,
+   "aspect_fitted": 1.6
+  }
+ },
+ "postprocessing": "None. The approved look is the plain WebGLRenderer output shown above; there is no bloom, SSAO or other pass to reproduce."
+}
