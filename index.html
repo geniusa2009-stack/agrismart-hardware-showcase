@@ -6,6 +6,10 @@
 <title>AgriSmart Hardware Explorer</title>
 <meta name="description" content="Interactive 3D explorer of the AgriSmart V4 field hardware: Sense, Control, Drip module and Connect.">
 <meta property="og:image" content="preview-three-quarter.png">
+<link rel="icon" type="image/png" href="explorer/favicon-64.png">
+<link rel="apple-touch-icon" href="explorer/apple-touch-icon.png">
+<meta name="theme-color" content="#082422">
+<script>try { if (localStorage.getItem('agrismart-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
 <link rel="stylesheet" href="explorer/style.css">
 <script type="importmap">
 { "imports": {
@@ -22,7 +26,11 @@
 <header class="glass">
   <img src="explorer/agrismart-logo.png" alt="AgriSmart">
   <div><b>AgriSmart Hardware</b><span>V4 · Interactive explorer</span></div>
-  <nav><a href="judges/">Judges portal</a><a class="opt" href="example/">Simple viewer</a></nav>
+  <nav><a href="judges/">Judges portal</a><a class="opt" href="example/">Simple viewer</a>
+    <button id="theme" type="button" title="Switch light / dark theme" aria-label="Switch light or dark theme">
+      <svg class="i moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <svg class="i sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button></nav>
 </header>
 
 <aside id="panel" class="glass">

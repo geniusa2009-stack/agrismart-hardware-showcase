@@ -38,12 +38,29 @@ const rim = new THREE.DirectionalLight(0x7fe3c0, 1.1); rim.position.set(-4, 3, -
 const fill = new THREE.DirectionalLight(0xfff4e6, 0.35); fill.position.set(-5, 2, 4); scene.add(fill);
 const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.38 }));
 ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
-const grid = new THREE.GridHelper(12, 60, 0x2c8f6e, 0x1a5446);
+let grid = new THREE.GridHelper(12, 60, 0x2c8f6e, 0x1a5446);
 grid.material.transparent = true; grid.material.opacity = 0.22; grid.material.depthWrite = false; grid.position.y = 0.001; scene.add(grid);
 
 const camera = new THREE.PerspectiveCamera(40, 1, 0.01, 200);
 const controls = new OrbitControls(camera, canvas);
 Object.assign(controls, { enableDamping: true, dampingFactor: 0.08, maxPolarAngle: Math.PI * 0.495, minDistance: 0.15, maxDistance: 14, autoRotateSpeed: 0.8 });
+
+// ---------- theme ----------
+const hemi = scene.children.find(o => o.isHemisphereLight);
+function applyTheme(t, save = true) {
+  const light = t === 'light';
+  document.documentElement.dataset.theme = light ? 'light' : 'dark';
+  if (save) try { localStorage.setItem('agrismart-theme', light ? 'light' : 'dark'); } catch (e) {}
+  scene.remove(grid); grid.geometry.dispose(); grid.material.dispose();
+  grid = new THREE.GridHelper(12, 60, light ? 0xb9c3c9 : 0x2c8f6e, light ? 0xdde3e7 : 0x1a5446);
+  grid.material.transparent = true; grid.material.opacity = light ? 0.55 : 0.22; grid.material.depthWrite = false; grid.position.y = 0.001; scene.add(grid);
+  ground.material.opacity = light ? 0.16 : 0.38;
+  hemi.color.set(light ? 0xffffff : 0xdff7ee); hemi.groundColor.set(light ? 0xd9dee2 : 0x0b2a26); hemi.intensity = light ? 0.9 : 0.55;
+  rim.color.set(light ? 0xffffff : 0x7fe3c0); rim.intensity = light ? 0.6 : 1.1;
+  scene.environmentIntensity = light ? 0.6 : 0.45;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', light ? '#FAFBFC' : '#082422');
+  dirty = true;
+}
 
 // ---------- state ----------
 const comps = new Map();      // id -> { meta, group, meshes, base, off, hidden, row, box }
@@ -54,7 +71,9 @@ let explodeT = 0, explodeCur = 0, dirty = true, tween = null;
 let homeView = null;
 
 // On desktop the parts panel covers the right side, so the projection centre moves left by half its width.
-const resize = () => { const w = innerWidth, h = innerHeight, mob = matchMedia('(max-width: 820px)').matches; renderer.setSize(w, h, false); camera.aspect = w / h;
+applyTheme(document.documentElement.dataset.theme, false);
+$('#theme').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'));
+const resize = () => { const w = innerWidth, h = innerHeight, mob = matchMedia('(max-width: 820px)').matches; if (!w || !h) return; // a tab loading in the background can report a zero-size window renderer.setSize(w, h, false); camera.aspect = w / h;
   if (mob) camera.clearViewOffset(); else camera.setViewOffset(w, h, PANEL_W / 2, 0, w, h); camera.updateProjectionMatrix(); dirty = true; };
 addEventListener('resize', resize); resize();
 controls.addEventListener('change', () => { dirty = true; });
@@ -119,6 +138,7 @@ function flyTo(box, dur = 900, dirOverride) {
   const fov = camera.fov * Math.PI / 180, fit = Math.max(s.radius / Math.sin(fov / 2), s.radius / Math.sin(Math.atan(Math.tan(fov / 2) * camera.aspect)));
   const margin = MOBILE ? 1 : innerWidth / (innerWidth - PANEL_W);
   const dist = Math.max(fit * 1.45 * margin, 0.18);
+  if (!Number.isFinite(dist) || !Number.isFinite(s.radius)) return;
   tween = { t0: performance.now(), dur, p0: camera.position.clone(), t0v: controls.target.clone(), p1: s.center.clone().addScaledVector(dir, dist), t1: s.center.clone() };
 }
 const visibleBox = () => { const b = new THREE.Box3(); for (const c of comps.values()) if (!c.hidden) b.union(c.box); return b; };
@@ -138,9 +158,9 @@ function buildList() {
     const g = document.createElement('div'); g.className = 'grp'; g.innerHTML = `<span>${p}</span><span>${byP.get(p).length}</span>`; list.append(g); byP.get(p)[0].grpEl = g;
     for (const c of byP.get(p)) {
       const r = document.createElement('div'); r.className = 'row'; r.setAttribute('role', 'option'); r.tabIndex = 0;
-      r.innerHTML = `<span class="id"></span><span class="nm"></span><button class="eye" title="Show / hide" aria-label="Show or hide">👁</button>`;
+      r.innerHTML = `<span class="id"></span><span class="nm"></span><button class="vis" type="button" title="Show / hide part" aria-label="Show or hide part"><svg class="i on" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg><svg class="i off" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c4.97 0 8.27 3.6 9.94 6.65a1 1 0 0 1 0 .7 13.16 13.16 0 0 1-1.67 2.68M14.08 14.16a3 3 0 0 1-4.24-4.24M17.48 17.5A10.75 10.75 0 0 1 2.06 12.35a1 1 0 0 1 0-.7 10.76 10.76 0 0 1 4.45-5.14M2 2l20 20"/></svg></button>`;
       r.querySelector('.id').textContent = c.meta.id; r.querySelector('.nm').textContent = c.meta.name; r.title = c.meta.name;
-      r.addEventListener('click', e => { if (e.target.closest('.eye')) { setHidden(c, !c.hidden); return; } select(c, true); });
+      r.addEventListener('click', e => { if (e.target.closest('.vis')) { setHidden(c, !c.hidden); return; } select(c, true); });
       r.addEventListener('keydown', e => { if (e.key === 'Enter') select(c, true); });
       c.row = r; c.grp = p; list.append(r);
     }
